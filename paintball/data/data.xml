@@ -1,0 +1,142 @@
+<odoo>
+    <data>
+        <!-- EMPLEADOS -->
+        <record id="empleado1" model="paintball.empleado">
+            <field name="name">18469597E</field>
+            <field name="nombre">Juan</field>
+            <field name="apellidos">Santos Fernandez</field>
+            <field name="sueldo">1200</field>
+            <field name="telefono">658741255</field>
+        </record>
+        <record id="empleado2" model="paintball.empleado">
+            <field name="name">16849875H</field>
+            <field name="nombre">Ana</field>
+            <field name="apellidos">Gallardo Guzman</field>
+            <field name="sueldo">1200</field>
+            <field name="telefono">745698521</field>
+        </record>
+        <record id="empleado3" model="paintball.empleado">
+            <field name="name">16497984E</field>
+            <field name="nombre">Carlos</field>
+            <field name="apellidos">Perez Pacheco</field>
+            <field name="sueldo">1000</field>
+            <field name="telefono">664585231</field>
+        </record>
+        <!-- CAMPOS -->
+        <record id="campo1" model="paintball.campo">
+            <field name="name">1</field>
+            <field name="nombre">Belgrado</field>
+            <field name="metros">50</field>
+            <field name="descripcion">Toma de bandera</field>
+            <field name="encargado" ref="empleado1"/>
+        </record>
+        <record id="campo2" model="paintball.campo">
+            <field name="name">2</field>
+            <field name="nombre">Normandia</field>
+            <field name="metros">45</field>
+            <field name="descripcion">Conquista</field>
+            <field name="encargado" ref="empleado2"/>
+        </record>
+        <record id="campo3" model="paintball.campo">
+            <field name="name">3</field>
+            <field name="nombre">Touluse</field>
+            <field name="metros">70</field>
+            <field name="descripcion">Eliminacion</field>
+            <field name="encargado" ref="empleado3"/>
+        </record>
+        <!-- MATERIALES -->
+        <record id="material" model="paintball.material">
+            <field name="name">1</field>
+            <field name="nombre">Rifle aire comprimido</field>
+            <field name="categoria">1</field>
+            <field name="cantidad">20</field>
+        </record>
+        <record id="materia2" model="paintball.material">
+            <field name="name">2</field>
+            <field name="nombre">Mono azul</field>
+            <field name="categoria">2</field>
+            <field name="cantidad">30</field>
+        </record>
+        <record id="material" model="paintball.material">
+            <field name="name">3</field>
+            <field name="nombre">Mono rojo</field>
+            <field name="categoria">2</field>
+            <field name="cantidad">30</field>
+        </record>
+        <record id="material" model="paintball.material">
+            <field name="name">4</field>
+            <field name="nombre">Mascara</field>
+            <field name="categoria">3</field>
+            <field name="cantidad">40</field>
+        </record>
+        <record id="material" model="paintball.material">
+            <field name="name">5</field>
+            <field name="nombre">Bolas rojas</field>
+            <field name="categoria">4</field>
+            <field name="cantidad">10000</field>
+        </record>
+        <record id="material" model="paintball.material">
+            <field name="name">6</field>
+            <field name="nombre">Bolas azules</field>
+            <field name="categoria">4</field>
+            <field name="cantidad">10000</field>
+        </record>
+        <!-- EQUIPOS -->
+        <record id="equipo1" model="paintball.equipo">
+            <field name="name">1</field>
+            <field name="nombre">Omega</field>
+            <field name="telefono">689652365</field>
+        </record>
+        <record id="equipo2" model="paintball.equipo">
+            <field name="name">2</field>
+            <field name="nombre">Gamma</field>
+            <field name="telefono">785412589</field>
+        </record>
+        <!-- CLIENTES -->
+        <record id="cliente1" model="paintball.cliente">
+            <field name="name">1</field>
+            <field name="nombre">Juan</field>
+            <field name="apellidos">Aparicio</field>
+            <field name="fecha_nac">1995-01-25</field>
+            <field name="telefono">689652365</field>
+            <field name="equipo" ref="equipo1"/>
+        </record>
+        <record id="cliente2" model="paintball.cliente">
+            <field name="name">2</field>
+            <field name="nombre">Sergio</field>
+            <field name="apellidos">Amador</field>
+            <field name="fecha_nac">1996-09-23</field>
+            <field name="telefono">658965522</field>
+            <field name="equipo" ref="equipo1"/>
+        </record>
+        <record id="cliente3" model="paintball.cliente">
+            <field name="name">3</field>
+            <field name="nombre">Sara</field>
+            <field name="apellidos">Alonso</field>
+            <field name="fecha_nac">1998-08-02</field>
+            <field name="telefono">785412589</field>
+            <field name="equipo" ref="equipo2"/>
+        </record>
+        <record id="cliente4" model="paintball.cliente">
+            <field name="name">4</field>
+            <field name="nombre">Lucia</field>
+            <field name="apellidos">Jimenez</field>
+            <field name="fecha_nac">1995-09-01</field>
+            <field name="telefono">698001320</field>
+            <field name="equipo" ref="equipo2"/>
+        </record>
+        <!-- CAMPEONATOS -->
+        <record id="campeonato1" model="paintball.campeonato">
+            <field name="name">Competicion mixta 2018</field>
+            <field name="año">2018</field>
+            <field name="num_equipos">2</field>
+            <field name="equipo" ref="equipo1"/>
+        </record>
+        <record id="campeonato2" model="paintball.campeonato">
+            <field name="name">Competicion mixta 2019</field>
+            <field name="año">2019</field>
+            <field name="num_equipos">2</field>
+            <field name="equipo" ref="equipo2"/>
+        </record>
+    </data>
+</odoo>

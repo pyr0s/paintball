@@ -1,0 +1,163 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="paintball.empleado">
+      <field name="name">Lista Empleados</field>
+      <field name="model">paintball.empleado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="sueldo"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="paintball.material">
+      <field name="name">Lista Material</field>
+      <field name="model">paintball.material</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="categoria"/>
+          <field name="cantidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="paintball.campo">
+      <field name="name">Lista Campos</field>
+      <field name="model">paintball.campo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="metros"/>
+          <field name="descripcion"/>
+          <field name="encargado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="paintball.campeonato">
+      <field name="name">Lista Campeonatos</field>
+      <field name="model">paintball.campeonato</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="año"/>
+          <field name="num_equipos"/>
+          <field name="equipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="paintball.cliente">
+      <field name="name">Lista Clientes</field>
+      <field name="model">paintball.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="fecha_nac"/>
+          <field name="telefono"/>
+          <field name="equipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="paintball.equipo">
+      <field name="name">Lista Equipos</field>
+      <field name="model">paintball.equipo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="paintball.empleado_action_window">
+      <field name="name">Empleados</field>
+      <field name="res_model">paintball.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paintball.material_action_window">
+      <field name="name">Material</field>
+      <field name="res_model">paintball.material</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paintball.campo_action_window">
+      <field name="name">Campos</field>
+      <field name="res_model">paintball.campo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paintball.campeonato_action_window">
+      <field name="name">Campeonatos</field>
+      <field name="res_model">paintball.campeonato</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paintball.cliente_action_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">paintball.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paintball.equipo_action_window">
+      <field name="name">Equipos</field>
+      <field name="res_model">paintball.equipo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="paintball.action_server">
+      <field name="name">paintball server</field>
+      <field name="model_id" ref="model_paintball_paintball"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="paintball" id="paintball.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Empleados" id="paintball.menu_1" parent="paintball.menu_root"/>
+    <menuitem name="Material" id="paintball.menu_2" parent="paintball.menu_root"/>
+    <menuitem name="Campos" id="paintball.menu_3" parent="paintball.menu_root"/>
+    <menuitem name="Campeonatos" id="paintball.menu_5" parent="paintball.menu_root"/>
+    <menuitem name="Clientes" id="paintball.menu_6" parent="paintball.menu_root"/>
+    <!-- actions -->
+
+    <menuitem name="Lista de empleados" id="paintball.menu_1_list" parent="paintball.menu_1" action="paintball.empleado_action_window"/>
+    <menuitem name="Lista de materiales" id="paintball.menu_2_list" parent="paintball.menu_2" action="paintball.material_action_window"/>
+    <menuitem name="Lista de campos" id="paintball.menu_3_list" parent="paintball.menu_3" action="paintball.campo_action_window"/>
+    <menuitem name="Lista de campeonatos" id="paintball.menu_5_list" parent="paintball.menu_5" action="paintball.campeonato_action_window"/>
+    <menuitem name="Lista de clientes" id="paintball.menu_6_list" parent="paintball.menu_6" action="paintball.cliente_action_window"/>
+    <menuitem name="Lista de equipos" id="paintball.menu_7_list" parent="paintball.menu_6" action="paintball.equipo_action_window"/>
+
+  </data>
+</odoo>
